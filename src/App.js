@@ -10,18 +10,22 @@ import ShoppingCart from "./components/ShoppingCart";
 // Contexts
 import ProductContext from "./contexts/ProductContext";
 import CartContext from "./contexts/CartContext";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
+  const [storedValue, setValue] = useLocalStorage("cart");
   const [products] = useState(data);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([...storedValue]);
 
   const addItem = item => {
     // add the given item to the cart
     setCart([...cart, item]);
+    setValue([...cart, item]);
   };
 
   const removeItem = id => {
     setCart(cart.filter(item => item.id !== id));
+    setValue(cart.filter(item => item.id !== id));
   };
 
   return (
