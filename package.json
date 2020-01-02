@@ -1,8 +1,8 @@
 {
-  "name": "shopping-cart",
+  "name": "react-shopping-cart",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kabeh2.github.io/shopping-cart/",
+  "homepage": "https://kabeh2.github.io/react-shopping-cart/",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
